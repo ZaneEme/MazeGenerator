@@ -1,10 +1,11 @@
 
 var cols, rows;
-var w = 25  //size of each grid square
+var canvasSize = window.innerWidth / 1.5;
+var w = canvasSize / 15  //size of each grid square
 var grid = [];
 var current;
 var stack = [];
-var canvasSize = 500;
+
 
 
 function setup() {
@@ -49,7 +50,7 @@ function draw() {
   fill(95, 128, 93);
   rect(0, 0, w, w);
   fill(191, 15, 18);
-  rect(canvasSize - w, canvasSize - w, canvasSize, canvasSize);
+  rect(height - w, height - w, canvasSize, canvasSize);
 }
 
 //find the index in the grid of a certain cell

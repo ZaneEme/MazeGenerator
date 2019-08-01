@@ -10,8 +10,8 @@ var stack = [];
 
 function setup() {
   createCanvas(canvasSize, canvasSize);
-  cols = floor(width / w);  //number of columns
-  rows = floor(height / w); //number of rows
+  cols = floor(canvasSize / w);  //number of columns
+  rows = floor(canvasSize / w); //number of rows
   frameRate(15);
 
   for(var j = 0; j < rows; j++){

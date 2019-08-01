@@ -50,7 +50,7 @@ function draw() {
   fill(95, 128, 93);
   rect(0, 0, w, w);
   fill(191, 15, 18);
-  rect(height - w, height - w, canvasSize, canvasSize);
+  rect(canvasSize - w, canvasSize - w, canvasSize, canvasSize);
 }
 
 //find the index in the grid of a certain cell

@@ -27,7 +27,7 @@ function Cell(i, j) {
         neighbors.push(left);
       }
   
-      if (neighbors.length > 0){
+      if (neighbors.length > 0){ //pick a random neighbor
         var r = floor(random(0, neighbors.length));
         return neighbors[r];
       } else {
@@ -36,16 +36,16 @@ function Cell(i, j) {
     }
   
     this.highlight = function() {
-      var x = this.i * w; //cell corner x
-      var y = this.j * w; //cell corner y
+      var x = (this.i * w) + (halfWindow * 0.5) + 3; //cell corner x
+      var y = this.j * w + 3; //cell corner y
       noStroke();
       fill(0, 0, 255, 100);
       rect(x, y, w, w);
     }
   
     this.show = function() {
-      var x = this.i * w; //cell corner x
-      var y = this.j * w; //cell corner y
+      var x = this.i * w + 3 + (halfWindow * 0.5); //cell corner x
+      var y = this.j * w + 3; //cell corner y
       stroke(255);
   
       //Prints a line for each wall
@@ -63,7 +63,7 @@ function Cell(i, j) {
       }
   
       if (this.visited){
-        noStroke();
+        noStroke(); //set the cell to visited and make it purple
         fill(255, 0, 255, 100);
         rect(x, y, w, w);
       }

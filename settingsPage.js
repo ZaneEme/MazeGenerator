@@ -36,13 +36,14 @@ function settingsPage(){
 }
   
 function mousePressed(){
-    //Square submit button x, y, width and height
-    if(mouseX >= halfWindow - (85 / 2) && mouseX <= halfWindow + (85 / 2) && mouseY >= halfWindow * 0.65 && mouseY <= halfWindow * 0.65 + 35 && gameRunning == false){     
-        RunButton();
-    }
     if(hasTouchscreen == true && mouseX >= halfWindow * 0.5 + 3 && mouseX <= halfWindow + 3 && mouseY >= 3 && mouseY <= halfWindow + 3){
         gameRunning = false;
+    } else if(mouseX >= halfWindow - (85 / 2) && mouseX <= halfWindow + (85 / 2) && mouseY >= halfWindow * 0.65 && mouseY <= halfWindow * 0.65 + 35 && gameRunning == false){     
+        //Square submit button x, y, width and height
+        RunButton();
     }
+    
+    
 }
   
 function RunButton(){

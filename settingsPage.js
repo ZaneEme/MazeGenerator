@@ -21,9 +21,14 @@ function settingsPage(){
   
     //submit button
     rectMode(CORNER);
-    submitSquare = rect(halfWindow * 0.92, halfWindow * 0.65, 85, 35, 10);
+    submitSquare = rect(halfWindow - (85 / 2), halfWindow * 0.65, 85, 35, 10);
     fill(51);
-    submitText = text("Run Maze", halfWindow, halfWindow * 0.7);
+    textAlign(LEFT, TOP);
+    submitText = text("Run Maze", halfWindow - (85 / 2), halfWindow * 0.65 + 5);
+
+    textAlign(CENTER, BOTTOM);
+    rowsColsSel.position(halfWindow - 15, halfWindow * 0.35);
+    frameRateSel.position(halfWindow - 15, halfWindow * 0.5);
     
     frameRateSel.show();
     rowsColsSel.show();
@@ -32,8 +37,11 @@ function settingsPage(){
   
 function mousePressed(){
     //Square submit button x, y, width and height
-    if(mouseX >= halfWindow * 0.92 && mouseX <= halfWindow * 0.92 + 85 && mouseY >= halfWindow * 0.65 && mouseY <= halfWindow * 0.65 + 35 && gameRunning == false){     
+    if(mouseX >= halfWindow - (85 / 2) && mouseX <= halfWindow + (85 / 2) && mouseY >= halfWindow * 0.65 && mouseY <= halfWindow * 0.65 + 35 && gameRunning == false){     
         RunButton();
+    }
+    if(hasTouchscreen == true && mouseX >= halfWindow * 0.5 + 3 && mouseX <= halfWindow + 3 && mouseY >= 3 && mouseY <= halfWindow + 3){
+        gameRunning = false;
     }
 }
   

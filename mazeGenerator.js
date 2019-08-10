@@ -32,7 +32,6 @@ function setup() {
     //Code for RowsColsSel
     textAlign(CENTER);
     rowsColsSel = createSelect();
-    rowsColsSel.position(halfWindow - 15, halfWindow * 0.35);
     for(var i = 5; i <= 30; i += 5){ //create the number of dropdowns
       rowsColsSel.option(i);
     }
@@ -40,7 +39,6 @@ function setup() {
     //Code for frameRateSel
     textAlign(CENTER);
     frameRateSel = createSelect();
-    frameRateSel.position(halfWindow - 15, halfWindow * 0.5);
     for(var i = 5; i <= 30; i += 5){ //create the number of dropdowns
       frameRateSel.option(i);
     }
@@ -88,7 +86,7 @@ function draw() {
         }
     }
     
-    if(stack.length == 0){ //if the game is done generating
+    if(stack.length == 0 && hasTouchscreen == false){ //if the game is done generating
       runGame();
     } else {
       playable = false;

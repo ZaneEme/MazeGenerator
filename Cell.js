@@ -46,7 +46,7 @@ function Cell(i, j) {
     this.show = function() {
       var x = this.i * w + 3 + (halfWindow * 0.5); //cell corner x
       var y = this.j * w + 3; //cell corner y
-      stroke(255);
+      stroke(255, 204, 0);
   
       //Prints a line for each wall
       if (this.walls[0]){
@@ -64,9 +64,14 @@ function Cell(i, j) {
   
       if (this.visited){
         noStroke(); //set the cell to visited and make it purple
-        fill(255, 0, 255, 100);
+        fill(98, 102, 101, 75);
         rect(x, y, w, w);
       }
-  
+    }
+
+    this.lineTrace = function(direction){
+        if(direction == 0){
+            
+        }
     }
   }
